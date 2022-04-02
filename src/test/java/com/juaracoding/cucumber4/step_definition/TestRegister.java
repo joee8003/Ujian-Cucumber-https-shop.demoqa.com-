@@ -27,50 +27,19 @@ import io.cucumber.java.en.When;
 import io.cucumber.spring.CucumberContextConfiguration;
 import io.cucumber.java.en.Then;
 
-@CucumberContextConfiguration
 @ContextConfiguration(classes = AutomationFrameworkConfig.class)
-public class StepDefinition {
+public class TestRegister {
 
-	private static WebDriver driver;
-	private LoginPage loginPage;
+	public WebDriver driver;
 	ExtentTest extentTest;
-	static ExtentReports reports = new ExtentReports("src/main/resources/TestReport.html");
 	
-
-	@Autowired
-	ConfigurationProperties configurationProperties;
-	
-	@Before
-	public void initializeObjects(){
-		DriverSingleton.getInstance(configurationProperties.getBrowser());
-		loginPage = new LoginPage();
-		bookingPage = new BookingPage();
-		TestCases[] tests = TestCases.values();
-		extentTest = reports.startTest(tests[Utils.testCount].getTestName());
-		Utils.testCount++;
-	}
-	@AfterStep
-	public void getResult(Scenario scenario) throws Exception {
-		if (scenario.isFailed()) {
-			String screenshotPath = Utils.getScreenshot(driver, scenario.getName().replace(" ", " "));
-			extentTest.log(LogStatus.FAIL, "Screenshot:\n"+
-			extentTest.addScreenCapture(screenshotPath));
-	}
-	}
-	@AfterAll
-	public static void closeBrowser() {
-		driver.quit();
+	public TestRegister() {
+		driver = Hook.driver;
 	}
 	
-	@Given("Customer mengakses url")
-	public void customer_mengakses_url() {
-		driver = DriverSingleton.getDriver();
-		driver.get(Constants.URL);
-		extentTest.log(LogStatus.PASS, "Navigating to "+Constants.URL);
-	}
 	
-	@When("Customer klik login button")
-	public void customer_klik_login_button() {
+	@When("customer mendaftarkan account baru")
+	public void customer_add_account() {
 	loginPage.submitLogin(configurationProperties.getEmail(), configurationProperties.getPassword());
 	extentTest.log(LogStatus.PASS, "Customer klik login Button");
 	}

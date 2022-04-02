@@ -49,17 +49,7 @@ public class ConfigurationProperties {
 		return password;
 	}
 
-	public String getUsername() {
-		return username;
-	}
 
-	public String getTxtHello() {
-		return txtHello;
-	}
-
-	public String getTxtTitleMyBookingPage() {
-		return txtTitleMyBookingPage;
-	}
 }
 
 	
