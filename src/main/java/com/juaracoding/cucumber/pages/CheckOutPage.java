@@ -1,5 +1,6 @@
 package com.juaracoding.cucumber.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -62,6 +63,8 @@ public class CheckOutPage {
 	
 
 	public void inputtData1(String firstname, String lastname, String companyName) {
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		je.executeScript("window.scrollBy(0,500)");
 		inputfirstName.sendKeys(firstname);
 		inputLastName.sendKeys(lastname);
 		inputcompanyName.sendKeys(companyName);
@@ -75,6 +78,8 @@ public class CheckOutPage {
 	}
 	
 	public void inputData2() {
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		je.executeScript("window.scrollBy(0,500)");
 		inputhouseNumber.sendKeys("12345");
 		inputApartement.sendKeys("apartment");
 		inputTown.sendKeys("jakarta");
@@ -88,10 +93,12 @@ public class CheckOutPage {
 	}
 	
 	public void inputData3() {
-		inputPin.sendKeys("12345");
+		inputPin.sendKeys("123456");
 		inputPhone.sendKeys("08112345");
 		inputEmail.sendKeys("test@yahoo.com");
 		inputorderNotes.sendKeys("testing");
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		je.executeScript("window.scrollBy(0,-500)");
 		
 	}
 	

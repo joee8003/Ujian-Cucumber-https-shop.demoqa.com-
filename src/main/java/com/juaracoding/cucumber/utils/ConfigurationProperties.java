@@ -12,22 +12,56 @@ public class ConfigurationProperties {
 	private String browser;
 	
 	@Value("${username}")
-	private String userName;
+	private String username;
 	
-	@Value("${email}")
-	private String email;
+	@Value("${emailAddress}")
+	private String emailAdress;
 	
 	@Value("${password}")
 	private String password;
 	
-	@Value("${user}")
-	private String username;
+	@Value("${txtWelcome}")
+	private String txtWelcome;
 	
-	@Value("${txtHello}")
-	private String txtHello;
+	@Value("${username}")
+	private String username1;
 	
-	@Value("${txtTitleMyBookingPage}")
-	private String txtTitleMyBookingPage;
+	@Value("${password}")
+	private String password1;
+	
+	@Value("${txtWelcome}")
+	private String txtWelcome1;
+	
+	@Value("${firstname}")
+	private String firstname;
+	
+	@Value("${lastname}")
+	private String lastname;
+	
+	@Value("${companyName}")
+	private String companyName;
+	
+	@Value("${12345}")
+	private String houseNumber;
+	
+	@Value("${apartment}")
+	private String apartment;
+	
+	@Value("${jakarta}")
+	private String jakarta;
+	
+	@Value("${123456}")
+	private String inputPin;
+	
+	@Value("${08112345}")
+	private String inputPhone;
+	
+	@Value("${test@yahoo.com}")
+	private String inputEmail;
+	
+	@Value("${testing}")
+	private String inputorderNotes;
+		
 
 	public String getBrowser() {
 		return browser;
@@ -38,18 +72,64 @@ public class ConfigurationProperties {
 	}
 
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 
 	public String getEmail() {
-		return email;
+		return emailAdress;
 	}
 
 	public String getPassword() {
 		return password;
 	}
+	
+	public String getTxtWelcome() {
+		return txtWelcome;
+	}
+	
+	public String getUserName1() {
+		return username1;
 
-
+	}
+	
+	public String getPassword1() {
+		return password1;
+	}
+	
+	public String getfirstName() {
+		return firstname;
+	}
+	
+	public String getlastname() {
+		return lastname;
+	}
+	
+	public String getcompanyName() {
+		return companyName;
+	}
+	
+	public String get12345() {
+		return houseNumber;
+	}
+	
+	public String getapartment() {
+		return apartment;
+	}
+	
+	public String getjakarta() {
+		return jakarta;
+	}
+	
+	public String getEmail2() {
+		return inputEmail;
+		
+	}
+	
+	public String gettesting() {
+		return inputorderNotes;
+		
+	}
+	
 }
 
 	
